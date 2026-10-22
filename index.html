@@ -177,6 +177,8 @@ nav.scrolled{background:rgba(12,28,51,.94);backdrop-filter:blur(14px);padding:.8
 .about-visual{position:relative;background:var(--navy-deep);border-radius:6px;aspect-ratio:4/5;overflow:hidden}
 .about-visual .grain{position:absolute;inset:0;opacity:.5}
 .about-visual .about-swirl{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.about-visual.has-video{aspect-ratio:16/9;background:#000;box-shadow:0 18px 50px rgba(12,28,51,.25)}
+.about-video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;background:#000}
 .about-eye{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:1rem}
 .about-title{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:var(--navy-deep);margin-bottom:1.3rem;line-height:1.2}
 .about-text p{color:var(--steel);margin-bottom:1.1rem;font-size:1rem}
@@ -405,8 +407,8 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.08);pa
 <!-- ═══ APROPOS ═══ -->
 <section id="apropos">
   <div class="container about-grid">
-    <div class="about-visual">
-      <div class="about-swirl"><svg id="about-swirl-svg" viewBox="0 0 300 300" width="200" height="200"></svg></div>
+    <div class="about-visual has-video">
+      <video class="about-video" src="aerogomm-grand-ouest-presentation.mp4" poster="aerogomm-grand-ouest-presentation.jpg" muted loop playsinline controls preload="metadata" aria-label="Vidéo de présentation d'AEROGOMM Grand Ouest"></video>
     </div>
     <div>
       <div class="about-eye">Notre savoir-faire</div>
@@ -939,6 +941,24 @@ document.getElementById('contactForm').addEventListener('submit', async function
       new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) start(); else stop(); }); }).observe(hero);
     } else { start(); }
   }
+})();
+</script>
+<script>
+/* ── vidéo « Notre savoir-faire » : lecture sans son quand elle est à l'écran ── */
+(function(){
+  var v = document.querySelector('.about-video');
+  if (!v) return;
+  v.muted = true;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting) {
+        if (v.muted && v.paused) { var p = v.play(); if (p && p.catch) p.catch(function(){}); }
+      } else if (!v.paused) {
+        v.pause();
+      }
+    });
+  }, { threshold: 0.4 }).observe(v);
 })();
 </script>
 </body>

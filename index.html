@@ -186,23 +186,24 @@ nav.scrolled{background:rgba(12,28,51,.94);backdrop-filter:blur(14px);padding:.8
 .about-list li{display:flex;align-items:flex-start;gap:.7rem;font-size:.92rem;color:var(--navy-deep)}
 .about-list li::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--blue-bright);margin-top:.5rem;flex-shrink:0}
 
-/* ── SERVICES : bloc « Besoin de décaper… » (repris de la page Google Ads) ── */
+/* ── SERVICES : bloc « Besoin de décaper… » (format Google Ads, aux couleurs du site) ── */
 #services{background:var(--off)}
 .need-panel{background:#fff;border:1px solid var(--line);border-radius:8px;box-shadow:0 14px 40px rgba(12,28,51,.07);padding:3rem 2.4rem 2.6rem}
 .need-title{font-family:'Space Grotesk',sans-serif;font-weight:400;font-size:clamp(1.55rem,3vw,2.3rem);line-height:1.22;letter-spacing:-.01em;color:var(--steel);text-align:center;max-width:780px;margin:0 auto;text-wrap:balance}
 .need-title strong{font-weight:700;color:var(--navy-deep)}
-.need-title::after{content:'';display:block;width:min(100%,640px);height:3px;margin:1.3rem auto 0;background:#f8e71c}
+.need-title::after{content:'';display:block;width:min(100%,640px);height:3px;margin:1.3rem auto 0;background:var(--blue-bright)}
 .need-intro{text-align:center;color:var(--navy-deep);font-size:1rem;max-width:640px;margin:1.5rem auto 1.3rem}
 .need-ask{text-align:center;font-weight:700;color:var(--navy-deep);font-size:1rem;margin:0 auto 2rem}
 .need-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1.6rem 1.2rem}
 .need-card{display:flex;flex-direction:column;text-decoration:none;color:var(--navy-deep);border-radius:4px}
 .need-photo{display:block;aspect-ratio:1/1;padding:4px;background:#fff;border:1px solid var(--line);box-shadow:0 2px 10px rgba(12,28,51,.08);overflow:hidden}
 .need-photo img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
-.need-btn{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:5rem;margin-top:.8rem;padding:.6rem .55rem .65rem;background:#ebf399;border:1px solid #1d2733;border-radius:4px;box-shadow:0 2px 5px rgba(12,28,51,.2);text-align:center;transition:background .25s}
+.need-btn{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:5rem;margin-top:.8rem;padding:.6rem .55rem .65rem;background:var(--navy);border:1px solid var(--navy);border-radius:4px;box-shadow:0 8px 22px var(--shadow-blue);color:#fff;text-align:center;transition:background .25s,border-color .25s}
 .need-btn b{display:block;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:1rem;line-height:1.25}
 .need-btn svg{display:inline-block;vertical-align:-.2em;margin-right:.38rem;transition:transform .25s}
-.need-btn i{display:block;margin-top:.2rem;font-size:.74rem;font-weight:600;line-height:1.35;color:#2b3645}
-.need-card:hover .need-btn{background:#f8e71c}
+.need-btn i{display:block;margin-top:.2rem;font-size:.74rem;font-weight:600;line-height:1.35;color:var(--blue-light);transition:color .25s}
+.need-card:hover .need-btn{background:var(--blue);border-color:var(--blue)}
+.need-card:hover .need-btn i{color:#fff}
 .need-card:hover .need-btn svg{transform:translateX(3px)}
 .need-card:hover .need-photo img{transform:scale(1.05)}
 .need-card:focus-visible{outline:3px solid var(--blue-bright);outline-offset:4px}
@@ -221,7 +222,7 @@ nav.scrolled{background:rgba(12,28,51,.94);backdrop-filter:blur(14px);padding:.8
   .need-btn i{font-size:.7rem}
   .need-btn svg{width:16px;height:16px;margin-right:.3rem}
 }
-@media(prefers-reduced-motion:reduce){.need-photo img,.need-btn svg,.need-btn{transition:none}}
+@media(prefers-reduced-motion:reduce){.need-photo img,.need-btn svg,.need-btn,.need-btn i{transition:none}}
 /* champ « Type de service » mis en évidence quand il est pré-rempli par le bloc */
 .field select{transition:border-color .3s,box-shadow .3s}
 .field.is-picked select{border-color:var(--blue-bright);box-shadow:0 0 0 3px rgba(63,133,214,.28)}

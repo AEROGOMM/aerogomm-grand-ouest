@@ -231,6 +231,31 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--blue-light);outline
 .seo-pair-grid img{aspect-ratio:4/3;object-fit:cover}
 .seo-pair-grid span{position:absolute;left:.6rem;top:.6rem;padding:.2rem .6rem;border-radius:3px;background:var(--navy-deep);color:#fff;font-size:.75rem;font-weight:600}
 @media(max-width:480px){.seo-pair-grid{grid-template-columns:1fr}}
+/* ── bloc « Recevez votre étude budgétaire » ── */
+.etude{position:relative;overflow:hidden;color:#fff;background:linear-gradient(160deg,var(--navy-deep) 0%,var(--navy) 55%,#0d213c 100%)}
+.etude::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 60% at 78% 55%,rgba(63,133,214,.28),transparent 70%);pointer-events:none}
+.etude-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1.05fr;gap:3rem;align-items:center}
+.etude h2{font-size:clamp(1.9rem,3.6vw,2.6rem);font-weight:700;line-height:1.15;letter-spacing:-.01em;margin-bottom:1.1rem;text-wrap:balance}
+.etude-lead{color:rgba(255,255,255,.78);font-size:1.05rem;margin-bottom:1.4rem;max-width:520px}
+.etude-list{list-style:none;display:grid;gap:.6rem;margin-bottom:2rem}
+.etude-list li{position:relative;padding-left:1.5rem;color:rgba(255,255,255,.9);font-size:.97rem}
+.etude-list li::before{content:'';position:absolute;left:0;top:.42rem;width:.85rem;height:.5rem;border-left:2px solid var(--blue-light);border-bottom:2px solid var(--blue-light);transform:rotate(-45deg)}
+.etude-note{margin-top:.9rem;font-size:.85rem;color:rgba(255,255,255,.55)}
+.etude-fan{--w:196px;position:relative;height:calc(var(--w) * 1.414 + 128px);margin:0 auto;width:100%;max-width:560px}
+.etude-page{position:absolute;left:50%;bottom:76px;width:var(--w);margin-left:calc(var(--w) / -2);transform-origin:50% 125%;transform:rotate(calc(var(--i) * 7deg));background:#fff;border-radius:2px;box-shadow:0 10px 26px rgba(0,0,0,.38);transition:transform .45s cubic-bezier(.2,.8,.3,1)}
+.etude-page img{display:block;width:100%;height:auto;border-radius:2px}
+.etude-page.is-front{z-index:20 !important;transform:rotate(calc(var(--i) * 7deg)) translateY(-18px)}
+@media(hover:hover){
+  .etude-fan:hover .etude-page{transform:rotate(calc(var(--i) * 9deg))}
+  .etude-fan .etude-page:hover,.etude-fan:hover .etude-page.is-front{z-index:20 !important;transform:rotate(calc(var(--i) * 9deg)) translateY(-18px)}
+}
+.etude-fan figcaption{position:absolute;left:0;right:0;bottom:0;text-align:center;font-size:.82rem;color:rgba(255,255,255,.55)}
+@media(max-width:900px){
+  .etude-grid{grid-template-columns:1fr;gap:1.6rem}
+  .etude-fan{order:-1;--w:150px}
+}
+@media(max-width:420px){.etude-fan{--w:124px;height:calc(var(--w) * 1.414 + 96px)}.etude-page{bottom:56px}}
+@media(prefers-reduced-motion:reduce){.etude-page{transition:none}}
 /* ── curseur avant / après ── */
 .ba{max-width:820px;margin:0 auto 3.4rem}
 .ba-frame{--pos:50%;position:relative;overflow:hidden;border-radius:6px;background:var(--off2);box-shadow:0 18px 44px rgba(12,28,51,.18);cursor:ew-resize;touch-action:pan-y;user-select:none;-webkit-user-select:none}
@@ -434,6 +459,38 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--blue-light);outline
 <p><strong>Changer la teinte de votre façade&nbsp;?</strong> Une déclaration préalable en mairie peut être nécessaire, en particulier si votre commune impose une palette de couleurs. Pour aller plus loin, consultez notre <a href="guide-bois-decapage-finition.html">guide pour décaper et protéger le bois</a>.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ═══ ÉTUDE BUDGÉTAIRE ═══ -->
+<section class="etude" id="etude-budgetaire">
+  <div class="container etude-grid">
+    <div>
+      <h2>Recevez votre étude budgétaire</h2>
+      <p class="etude-lead">Avant de vous décider, recevez une étude complète de votre projet de façade bois, gratuite et sans engagement.</p>
+      <ul class="etude-list">
+        <li>Le contexte et les prestations prévues pour votre façade</li>
+        <li>La technique d'aérogommage et la finition conseillée</li>
+        <li>L'entretien à prévoir selon la finition choisie</li>
+        <li>Le descriptif des travaux, phase par phase</li>
+        <li>Les moyens mis en œuvre et le planning</li>
+        <li>Les conditions tarifaires au m²</li>
+      </ul>
+      <a href="#devis" class="btn btn-primary etude-cta">Je demande mon étude budgétaire</a>
+      <p class="etude-note">Indiquez la surface approximative de votre façade : nous vous recontactons pour préparer votre étude.</p>
+    </div>
+    <figure class="etude-fan">
+        <div class="etude-page" style="--i:0;z-index:10"><img src="etude-budgetaire-page-1.jpg" width="400" height="566" loading="lazy" alt="Exemple d'étude budgétaire AEROGOMM pour une façade bois : page de couverture et sommaire"></div>
+        <div class="etude-page" style="--i:-1;z-index:9"><img src="etude-budgetaire-page-2.jpg" width="400" height="566" loading="lazy" alt=""></div>
+        <div class="etude-page" style="--i:1;z-index:9"><img src="etude-budgetaire-page-6.jpg" width="400" height="566" loading="lazy" alt=""></div>
+        <div class="etude-page" style="--i:-2;z-index:8"><img src="etude-budgetaire-page-3.jpg" width="400" height="566" loading="lazy" alt=""></div>
+        <div class="etude-page" style="--i:2;z-index:8"><img src="etude-budgetaire-page-7.jpg" width="400" height="566" loading="lazy" alt=""></div>
+        <div class="etude-page" style="--i:-3;z-index:7"><img src="etude-budgetaire-page-4.jpg" width="400" height="566" loading="lazy" alt=""></div>
+        <div class="etude-page" style="--i:3;z-index:7"><img src="etude-budgetaire-page-8.jpg" width="400" height="566" loading="lazy" alt=""></div>
+        <div class="etude-page" style="--i:-4;z-index:6"><img src="etude-budgetaire-page-5.jpg" width="400" height="566" loading="lazy" alt=""></div>
+        <div class="etude-page" style="--i:4;z-index:6"><img src="etude-budgetaire-page-9.jpg" width="400" height="566" loading="lazy" alt=""></div>
+      <figcaption>Exemple d'étude budgétaire (9 pages)</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -661,6 +718,23 @@ document.getElementById('devisForm').addEventListener('submit', async function(e
   }catch(err){ status.textContent = 'Erreur lors de l’envoi — merci de nous appeler au 06 42 12 31 55.'; status.style.color = '#c0392b' }
   btn.disabled = false;
 });
+</script>
+<script>
+/* ── étude budgétaire : une page touchée passe devant ; le bouton pré-remplit le formulaire ── */
+(function(){
+  var pages = document.querySelectorAll('.etude-page');
+  Array.prototype.forEach.call(pages, function(pg){
+    pg.addEventListener('click', function(){
+      var on = !pg.classList.contains('is-front');
+      Array.prototype.forEach.call(pages, function(o){ o.classList.remove('is-front'); });
+      if (on) pg.classList.add('is-front');
+    });
+  });
+  var cta = document.querySelector('.etude-cta'), msg = document.getElementById('d-msg');
+  if (cta && msg) cta.addEventListener('click', function(){
+    if (!msg.value.trim()) msg.value = 'Je souhaite recevoir une étude budgétaire pour ma façade bois.\nSurface approximative : ';
+  });
+})();
 </script>
 <script>
 /* ── curseur avant / après : souris, doigt et clavier ── */

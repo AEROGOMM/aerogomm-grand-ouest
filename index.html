@@ -289,6 +289,9 @@ nav.scrolled{background:rgba(12,28,51,.94);backdrop-filter:blur(14px);padding:.8
 @media(max-width:900px){.zone-grid{grid-template-columns:1fr;gap:2.2rem}}
 .zone-tags{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.6rem}
 .zone-tag{padding:.5rem 1rem;background:#fff;border:1px solid var(--line);border-radius:20px;font-size:.82rem;color:var(--navy-deep);font-weight:500}
+a.zone-tag{text-decoration:none;transition:border-color .2s,color .2s}
+a.zone-tag::after{content:' →';color:var(--blue-bright)}
+a.zone-tag:hover{border-color:var(--blue-bright);color:var(--blue)}
 .zone-map{background:#fff;border:1px solid var(--line);border-radius:6px;padding:2rem;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center}
 
 /* ── CONTACT ── */
@@ -580,14 +583,16 @@ footer{background:var(--navy-deep);border-top:1px solid rgba(255,255,255,.08);pa
     <div>
       <div class="about-eye">Zone d'intervention</div>
       <h2 class="about-title">Basés à Angers, nous intervenons dans tout le Grand Ouest</h2>
-      <p style="color:var(--steel);font-size:1rem">Particuliers, professionnels et collectivités : nos équipes se déplacent sur l'ensemble du territoire Grand Ouest pour vos chantiers d'aérogommage.</p>
+      <p style="color:var(--steel);font-size:1rem">Particuliers, professionnels et collectivités : nos équipes se déplacent sur l'ensemble du territoire Grand Ouest pour vos chantiers d'aérogommage. Choisissez votre département pour voir les villes où nous intervenons.</p>
       <div class="zone-tags">
-        <span class="zone-tag">Maine-et-Loire</span>
-        <span class="zone-tag">Loire-Atlantique</span>
-        <span class="zone-tag">Sarthe</span>
-        <span class="zone-tag">Mayenne</span>
+        <a class="zone-tag" href="aerogommage-maine-et-loire-49.html">Maine-et-Loire</a>
+        <a class="zone-tag" href="aerogommage-nantes-44.html">Loire-Atlantique</a>
+        <a class="zone-tag" href="aerogommage-le-mans-72.html">Sarthe</a>
+        <a class="zone-tag" href="aerogommage-laval-53.html">Mayenne</a>
+        <a class="zone-tag" href="aerogommage-rennes-35.html">Ille-et-Vilaine</a>
+        <a class="zone-tag" href="aerogommage-vannes-56.html">Morbihan</a>
+        <a class="zone-tag" href="aerogommage-tours-37.html">Indre-et-Loire</a>
         <span class="zone-tag">Vendée</span>
-        <span class="zone-tag">Ille-et-Vilaine</span>
         <span class="zone-tag">Deux-Sèvres</span>
       </div>
     </div>

@@ -453,7 +453,7 @@ function closeLightbox(){ document.getElementById('lightbox').classList.remove('
 document.addEventListener('keydown', e => { if(e.key === 'Escape') closeLightbox() });
 
 /* ═══ FORMULAIRE DE DEVIS (Formspree, même réglage que la page d'accueil) ═══ */
-const FORMSPREE_ENDPOINT = 'REPLACE_WITH_FORMSPREE_ENDPOINT';
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xyewyeae';
 document.getElementById('devisForm').addEventListener('submit', async function(e){
   e.preventDefault();
   const status = document.getElementById('formStatus');
